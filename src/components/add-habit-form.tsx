@@ -14,12 +14,10 @@ import {
   CardContent,
   Chip,
   Fade,
-  Alert,
   InputAdornment,
   IconButton,
   Tooltip,
   Grid,
-  Divider
 } from "@mui/material";
 import {
   Add as AddIcon,
@@ -27,10 +25,6 @@ import {
   CheckCircle as CheckCircleIcon,
   Schedule as ScheduleIcon,
   CalendarToday as CalendarIcon,
-  Psychology as PsychologyIcon,
-  FitnessCenter as FitnessCenterIcon,
-  MenuBook as MenuBookIcon,
-  LocalDining as LocalDiningIcon,
   TipsAndUpdates as TipsIcon
 } from "@mui/icons-material";
 import { addHabit } from "../store/habit-slice";
@@ -107,22 +101,7 @@ const AddHabitForm: React.FC = () => {
     setNameError("");
   };
 
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case "Health":
-        return <FitnessCenterIcon sx={{ fontSize: 16 }} />;
-      case "Learning":
-        return <MenuBookIcon sx={{ fontSize: 16 }} />;
-      case "Fitness":
-        return <FitnessCenterIcon sx={{ fontSize: 16 }} />;
-      case "Mindfulness":
-        return <PsychologyIcon sx={{ fontSize: 16 }} />;
-      case "Reflection":
-        return <MenuBookIcon sx={{ fontSize: 16 }} />;
-      default:
-        return <CheckCircleIcon sx={{ fontSize: 16 }} />;
-    }
-  };
+  
 
   return (
     <Paper 
@@ -371,10 +350,10 @@ const AddHabitForm: React.FC = () => {
             <Card 
               elevation={0} 
               sx={{ 
-                background: 'rgba(255, 255, 255, 0.95)',
-                borderRadius: 3,
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 255, 255, 0.2)'
+                background: 'transparent',
+                borderRadius: 0,
+                border: 'none',
+                boxShadow: 'none'
               }}
             >
               <CardContent sx={{ p: 3 }}>
@@ -383,7 +362,7 @@ const AddHabitForm: React.FC = () => {
                   sx={{ 
                     mb: 2, 
                     fontWeight: 600, 
-                    color: 'primary.main',
+                    color: 'White',
                     display: 'flex',
                     alignItems: 'center',
                     gap: 1
@@ -408,7 +387,7 @@ const AddHabitForm: React.FC = () => {
                         borderRadius: 2,
                         backgroundColor: 'rgba(102, 126, 234, 0.05)',
                         borderColor: 'rgba(102, 126, 234, 0.2)',
-                        color: 'primary.main',
+                        color: 'pink',
                         '&:hover': {
                           backgroundColor: 'rgba(102, 126, 234, 0.15)',
                           borderColor: 'rgba(102, 126, 234, 0.4)',
@@ -424,6 +403,7 @@ const AddHabitForm: React.FC = () => {
               </CardContent>
             </Card>
           </Grid>
+
         </Grid>
 
         {/* Tips Section - Full Width Below */}

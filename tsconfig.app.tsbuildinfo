@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/HabitTrackerHeader.tsx","./src/components/add-habit-form.tsx","./src/components/habit-list.tsx","./src/components/habit-stats.tsx","./src/store/habit-slice.ts","./src/store/store.ts"],"version":"5.6.2"}

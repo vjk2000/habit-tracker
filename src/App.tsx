@@ -1,6 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { Container, Typography, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import AddHabitForm from "./components/add-habit-form";
 import HabitList from "./components/habit-list";
 import HabitStats from "./components/habit-stats";

@@ -4,7 +4,6 @@ import {
   Box,
   Typography,
   Button,
-  LinearProgress,
   Paper,
   Grid,
   Chip,
@@ -67,11 +66,7 @@ const HabitList: React.FC = () => {
     return streak;
   };
 
-  const getCompletionPercentage = (habit: Habit) => {
-    const streak = getStreak(habit);
-    const maxStreak = 30; // Target of 30 days
-    return Math.min((streak / maxStreak) * 100, 100);
-  };
+  
 
   const getStreakColor = (streak: number) => {
     if (streak >= 30) return 'success';
@@ -255,7 +250,7 @@ const HabitList: React.FC = () => {
           {habits.map((habit, index) => {
             const streak = getStreak(habit);
             const isCompletedToday = habit.completedDates.includes(today);
-            const completionPercentage = getCompletionPercentage(habit);
+            
 
             return (
               <Fade in={true} timeout={300 + index * 100} key={habit.id}>
@@ -267,7 +262,7 @@ const HabitList: React.FC = () => {
                     borderColor: isCompletedToday ? 'success.light' : alpha(theme.palette.divider, 0.3),
                     background: isCompletedToday 
                       ? 'linear-gradient(135deg, rgba(76, 175, 80, 0.08) 0%, rgba(129, 199, 132, 0.08) 100%)'
-                      : 'background.paper',
+                      : 'linear-gradient(135deg, rgba(63, 81, 181, 0.08) 0%, rgba(103, 58, 183, 0.08) 100%)',
                     transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                     position: 'relative',
                     overflow: 'hidden',
